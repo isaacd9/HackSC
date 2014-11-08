@@ -1,6 +1,6 @@
 var request = require('request');
 var _ = require('lodash');
-var models = require('../model');
+var models = require('../models');
 
 module.exports = exports = {};
 
@@ -9,7 +9,7 @@ exports.search = function(req, res) {
 
   request
     .get("http://api.spotify.com/v1/search?type=track&limit=10&q=" + query, function(error, response, body) {
-      if (error) {
+      if (error || body.error) {
         res.status(500).send(error);
       }
 
@@ -18,7 +18,20 @@ exports.search = function(req, res) {
 };
 
 exports.selectSong = function(req, res) {
-  var songId = _.escape(req.query.q);
-
+  var songId = _.escape(req.query.songId);
   
+  console.log(req.query);
+  request
+    .get("http://api.spotify.com/v1/tracks/" + songId, function(error, response, body) {
+     if (error || body.error || !req.query.queueId) {
+      res.status(500).send(error);
+      return;
+     }
+
+     console.log(body);
+     models.song.addToQueue(req.query.queueId, body);
+     res.status(200).send({
+        message: "success"
+      });
+  });
 }

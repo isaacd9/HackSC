@@ -26,6 +26,7 @@ function configureApp (app) {
 function drawRoutes (app) {
   app.get('/', controllers.hi);
   app.get('/ajax/search', controllers.ajax.search);
+  app.get('/ajax/queue', controllers.ajax.selectSong);
   app.get('/room/:id', controllers.room.get);
 }
 
