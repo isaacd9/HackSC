@@ -2,6 +2,6 @@
 
 var app = require('../src/app');
 
-var server = app.start(app.create(), 8000, '0.0.0.0', function() {
+var server = app.start(app.create(), 8000, 'localhost', function() {
   console.log('Started server on ', server.address().address +  ':' + server.address().port);
 });
