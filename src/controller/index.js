@@ -9,3 +9,4 @@ exports.hi = function(req, res) {
 }
 
 module.exports.room = room;
+module.exports.ajax = ajax;
