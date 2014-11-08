@@ -1,8 +1,13 @@
 body{
   padding: 50px;
 }
-.container{
+
+.main-container{
   padding: 50px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .row1{
@@ -17,3 +22,6 @@ input{
   float: right;
 }
 
+li{
+  font-size: 1.3em;
+}
