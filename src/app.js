@@ -10,9 +10,10 @@ module.exports = exports = {};
 
 function configureApp (app) {
 //  app.use(bodyParser());
-  app.use(express.static(__dirname + '/public'));
-  app.set('views', path.join(__dirname + '/public'));
+  app.use("/public", express.static(__dirname + '/public'));
   app.engine('jade', require('jade').__express);
+  app.set('view engine', 'jade');
+  app.set('views', path.join(__dirname + '/view'));
   
   app.use(function(req, res, next) {
    req.spotify = {
