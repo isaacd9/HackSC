@@ -13,11 +13,20 @@ function configureApp (app) {
   app.use(express.static(__dirname + '/public'));
   app.set('views', path.join(__dirname + '/public'));
   app.engine('jade', require('jade').__express);
+  
+  app.use(function(req, res, next) {
+   req.spotify = {
+      clientId : "85308f706c9d47b787353e1a82e07cbc",
+      secret : "2bc786ec014b428e8389d3a41ebb738d"
+    };
+  next();
+  });
 }
 
 function drawRoutes (app) {
   app.get('/', controllers.hi);
-  app.get('room/:id', controllers.room.get);
+  app.get('/ajax/search', controllers.ajax.search);
+  app.get('/room/:id', controllers.room.get);
 }
 
 exports.create = function() {
