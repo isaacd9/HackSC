@@ -17,6 +17,7 @@ function configureApp (app) {
 
 function drawRoutes (app) {
   app.get('/', controllers.hi);
+  app.get('room/:id', controllers.room.get);
 }
 
 exports.create = function() {
