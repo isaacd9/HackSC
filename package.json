@@ -1,0 +1,25 @@
+{
+  "name": "HackSC",
+  "version": "1.0.0",
+  "description": "Our HackSC project",
+  "main": "./script/run.js",
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "express": "^4.10.1",
+    "jade": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isaacd9/HackSC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaacd9/HackSC/issues"
+  },
+  "homepage": "https://github.com/isaacd9/HackSC"
+}
