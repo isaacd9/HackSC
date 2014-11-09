@@ -1,6 +1,17 @@
 var exports = module.exports = {};
+var _ = require('lodash');
+
+var models = require('../models');
 
 exports.get = function (req, res) {
-  res.render('room', {'roomId':
-     "Isaac's cool room"}); 
+  
+  var roomId = _.escape(req.params.id);
+
+  models.room.getSongs(roomId, function(err, songs) {
+  
+  res.render('room', {
+      'roomId': req.params.id,
+      'songs': songs
+    });
+  });
 };

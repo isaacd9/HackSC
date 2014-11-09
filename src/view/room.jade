@@ -10,15 +10,23 @@ html(lang="en")
     script(src="/public/js/main.js")
     title=roomId
   body
-    .container
+    .container.main-container
       .row.row1
         .col-md-4
           button.btn play
         .col-md-8
           input.search(type="text" placeholder="Enter Keywords") 
-      .row
-        .col-md-16
-          ul
-            li.well sample text 
-            li.well more sample text 
-                
+      if songs.length != 0
+        .row
+          .col-md-16
+            ul
+                each val in songs
+                    li.well
+                      .container-fluid
+                        .col-md-4= val.name
+                        .col-md-4= val.artists[0].name
+                        .col-md-3= val.album.name
+                        .col-md-1= val.duration_ms
+      else
+        .row
+          .col-md-16 No songs entered yet. Find one to add!
