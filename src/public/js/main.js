@@ -11,7 +11,7 @@ $(document).ready(function() {
   $('.col-md-8 .search').typeahead(null, {
    name: 'songs',
    displayKey: function (val) {
-	  return '<div class="item" data-id="' + val.id  + '">' + val.name + ' - <span class="artist">' + val.artists[0].name + '</span></div>'; 
+	  return '<div id="hi" class="item" data-id="' + val.id  + '">' + val.name + ' - <span class="artist">' + val.artists[0].name + '</span></div>'; 
 	},
    source: findMatches,
    templates: {
@@ -19,10 +19,6 @@ $(document).ready(function() {
 	'No results found'
      ]
    }
-  });
-
-  $('div').on('click', function() {	
-     $('.search').val(" ");
   });
 
 });
