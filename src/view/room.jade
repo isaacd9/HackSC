@@ -37,8 +37,8 @@ script.
     $.get('/ajax/queue', {
         'songId':songId,
         'queueId':roomname
-       }), function(data) {
-            location.reload();
-          }
-         };
+       }, function(data) {
+            console.log("foo");
+            location.reload(true);
+          });
        });
