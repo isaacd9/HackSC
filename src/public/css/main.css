@@ -25,3 +25,9 @@ input{
 li{
   font-size: 1.3em;
 }
+
+li.well{
+  text-overflow:ellipsis;
+  border-top-right-radius: 25px;
+  border-radius: 25px;
+}

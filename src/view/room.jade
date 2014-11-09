@@ -17,7 +17,7 @@ html(lang="en")
               each val in songs
                   li.well    
                     .container-fluid
-                      .col-md-3= val.name
-                      .col-md-3= val.artists[0].name
+                      .col-md-4= val.name
+                      .col-md-4= val.artists[0].name
                       .col-md-3= val.album.name 
-                      .col-md-3= val.duration_ms 
+                      .col-md-1= val.duration_ms 
