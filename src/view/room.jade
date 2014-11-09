@@ -4,6 +4,7 @@ html(lang="en")
     link(href="/public/css/bootstrap.css", rel="stylesheet")
     link(href="/public/css/main.css", rel="stylesheet")
     script(src="/public/js/jquery-2.1.1.min.js")
+    script(src="/public/js/handlebars-v2.0.0.js")
     script(src="/public/js/underscore-min.js")
     script(src="/public/js/typeahead.bundle.js")
     script(src="/public/js/backbone-min.js")
@@ -15,18 +16,16 @@ html(lang="en")
         .col-md-4
           button.btn play
         .col-md-8
-          input.search(type="text" placeholder="Enter Keywords") 
-      if songs.length != 0
-        .row
-          .col-md-16
-            ul
-                each val in songs
-                    li.well
-                      .container-fluid
-                        .col-md-4= val.name
-                        .col-md-4= val.artists[0].name
-                        .col-md-3= val.album.name
-                        .col-md-1= val.duration_ms
-      else
-        .row
-          .col-md-16 No songs entered yet. Find one to add!
+          .input-group
+            span(class="input-group-addon glyphicon glyphicon-search magnify")
+            input.search.typeahead(type="text" placeholder="Enter Keywords") 
+      .row
+        .col-md-12
+          ul
+              each val in songs
+                  li.well    
+                    .container-fluid
+                      .col-md-4= val.name
+                      .col-md-4= val.artists[0].name
+                      .col-md-3= val.album.name 
+                      .col-md-1= val.duration_ms 
