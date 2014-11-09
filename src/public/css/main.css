@@ -86,6 +86,10 @@ li.well{
   margin: 0px;
 }
 
+span.tt-dropdown-menu{
+  background-color: #444;
+}
+
 .header{
   font-size: 6.5em;
   font-weight: bold;
