@@ -12,7 +12,7 @@ exports.search = function(req, res) {
       if (error || body.error) {
         res.status(500).send(error);
       }
-
+      res.setHeader("Content-Type", "text/plain");
       res.status(200).send(body);
       });
 };
@@ -30,6 +30,7 @@ exports.selectSong = function(req, res) {
 
      console.log(body);
      models.song.addToQueue(req.query.queueId, body);
+     res.setHeader("Content-Type", "text/plain");
      res.status(200).send({
         message: "success"
       });
