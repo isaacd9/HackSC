@@ -10,9 +10,11 @@ html(lang="en")
         .col-md-4
           button.btn play
         .col-md-8
-          input(type="text" placeholder="Enter Keywords") 
+          .input-group
+            span(class="input-group-addon glyphicon glyphicon-search magnify")
+            input(type="text" placeholder="Enter Keywords") 
       .row
-        .col-md-16
+        .col-md-12
           ul
               each val in songs
                   li.well    
