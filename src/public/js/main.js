@@ -1,6 +1,7 @@
 function findMatches(q, cb) {
   $.get('/ajax/search', {'q': q}, function(data) {
-      cb(data);
+      data = JSON.parse(data);
+      cb(data.tracks.items);
   });
  }
 
@@ -13,7 +14,7 @@ $(document).ready(function() {
      empty: [
 	'No results found'
      ],
-     suggestion: _.template(Name: "<%= name %>");
+     suggestion: _.template("<%= value %>")
    }
   });
 });
