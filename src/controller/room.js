@@ -5,12 +5,18 @@ var models = require('../models');
 
 exports.get = function (req, res) {
   
-  var roomId = _.escape(req.param.id);
+  var roomId = _.escape(req.params.id);
 
-  var songs = models.getSongs(req.param.id);
+  models.room.getSongs(roomId, function(err, songs) {
   
+  if (songs.length == 0) {
+    res.send('No songs in queue for this room');
+    return;
+  }  
+
   res.render('room', {
-      'roomId': req.param.id,
-      'song': songs
+      'roomId': req.params.id,
+      'songs': songs
     });
+  });
 };

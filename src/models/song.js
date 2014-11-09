@@ -7,4 +7,3 @@ exports.addToQueue = function(queue, song) {
  client.rpush(queue, JSON.stringify(song), redis.print);
 }
 
-
