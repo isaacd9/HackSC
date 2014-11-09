@@ -62,4 +62,15 @@ li.well{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-} 
+}
+
+.item{
+  background-color: #444;
+  color: #81b900;
+  border: 3px solid;
+  border-color: #81b900;
+  border-radius: 2px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  margin: 0px;
+}
