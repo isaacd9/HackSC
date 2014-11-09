@@ -10,16 +10,18 @@ html(lang="en")
         .col-md-4
           button.btn play
         .col-md-8
-          .input-group
-            span(class="input-group-addon glyphicon glyphicon-search magnify")
-            input(type="text" placeholder="Enter Keywords") 
-      .row
-        .col-md-12
-          ul
-              each val in songs
-                  li.well    
-                    .container-fluid
-                      .col-md-4= val.name
-                      .col-md-4= val.artists[0].name
-                      .col-md-3= val.album.name 
-                      .col-md-1= val.duration_ms 
+          input(type="text" placeholder="Enter Keywords")
+      if songs.length != 0
+        .row
+          .col-md-16
+            ul
+                each val in songs
+                    li.well
+                      .container-fluid
+                        .col-md-4= val.name
+                        .col-md-4= val.artists[0].name
+                        .col-md-3= val.album.name
+                        .col-md-1= val.duration_ms
+      else
+        .row
+          .col-md-16 No songs entered yet. Find one to add!

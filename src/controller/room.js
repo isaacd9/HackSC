@@ -9,11 +9,6 @@ exports.get = function (req, res) {
 
   models.room.getSongs(roomId, function(err, songs) {
   
-  if (songs.length == 0) {
-    res.send('No songs in queue for this room');
-    return;
-  }  
-
   res.render('room', {
       'roomId': req.params.id,
       'songs': songs
