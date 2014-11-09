@@ -9,9 +9,20 @@ exports.get = function (req, res) {
 
   models.room.getSongs(roomId, function(err, songs) {
   
+  var songIds = _.pluck(songs, 'id');
+  var songIdsString = "";
+  
+  _.eachRight(songIds, function(id) {
+    songIdsString += ':';
+    songIdsString += id;
+  });
+  
+  console.log(songIdsString);
+
   res.render('room', {
       'roomId': req.params.id,
-      'songs': songs
+      'songs': songs,
+      'ids': songIdsString
     });
   });
 };

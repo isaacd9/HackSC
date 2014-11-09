@@ -14,6 +14,7 @@ html(lang="en")
     .container.main-container
       .row.row1
         .col-md-4
+          iframe.embed(src="https://embed.spotify.com/?uri=spotify:trackset:PREFERETITLE" + ids frameborder="0" allowtransparency="true")
         .col-md-8
           .input-group
             span(class="input-group-addon glyphicon glyphicon-search magnify")
@@ -38,7 +39,6 @@ script.
         'songId':songId,
         'queueId':roomname
        }, function(data) {
-            console.log("foo");
             location.reload(true);
           });
        });

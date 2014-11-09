@@ -111,3 +111,8 @@ li.well{
   font-style: bold;
   color: #333;
 }
+
+.embed {
+  margin-bottom: -70px;
+  margin-left: 40px;
+}

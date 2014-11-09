@@ -20,6 +20,17 @@ $(document).ready(function() {
      ]
    }
   });
+  
+  var playing = false;
+
+  $('iframe').on('mousedown', function() {
+    console.log('handled click event');
+    playing = !playing;
+
+    $('ul li').first().css('background-color', 'red');
+    //$.get('/ajax/pop', window.location.pathname.substring(-6));
+    
+  });
 
 });
 
