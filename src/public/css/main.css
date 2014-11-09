@@ -1,6 +1,17 @@
 body{
-  background: #444; 
+  background: #444;
+ /* background-image: url("/public/img/Icon.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 10px 10px;*/  
   padding: 50px;
+}
+
+.homebody{
+  background-image: url("/public/img/botpic.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
 }
 
 ul {
@@ -48,6 +59,10 @@ li.well{
   border-radius: 35px;
 }
 
+.well h2 {
+  text-align: center;
+}
+
 .col-md-4{
   white-space: nowrap;
   overflow: hidden;
@@ -61,8 +76,7 @@ li.well{
 }
 
 .header{
-  font-size: 6em;
-  font-family: roboto;
+  font-size: 6.5em;
   font-weight: bold;
   color: #81b900;
 }
@@ -74,7 +88,7 @@ li.well{
 
 .jumbotron{
   text-align: center;
-  background-color: #444;
+  background-color: transparent;
   border: 1px;
 }
 
@@ -82,8 +96,7 @@ li.well{
   border-radius: 30px;
   background-color: #81b900;
   margin-top: 55px;
-  font-size: 5em;
-  font-family: roboto;
+  font-size: 4.7em;
   font-style: bold;
   color: #333;
 }

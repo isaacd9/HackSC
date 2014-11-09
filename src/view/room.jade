@@ -4,7 +4,7 @@ html(lang="en")
     link(href="/public/css/bootstrap.css", rel="stylesheet")
     link(href="/public/css/main.css", rel="stylesheet")
     title=roomId
-  body
+  body.roombody
     .container.main-container
       .row.row1
         .col-md-4
@@ -14,16 +14,11 @@ html(lang="en")
             input(type="text" placeholder="Enter Keywords") 
       .row
         .col-md-12
-          if songs.length != 0
-            ul
-                each val in songs
-                    li.well    
-                      .container-fluid
-                        .col-md-4= val.name
-                        .col-md-4= val.artists[0].name
-                        .col-md-3= val.album.name 
-                        .col-md-1= val.duration_ms 
-          else
-            .well
-              h2.center There are no songs in this room yet! Add some!
-                
+          ul
+              each val in songs
+                  li.well    
+                    .container-fluid
+                      .col-md-4= val.name
+                      .col-md-4= val.artists[0].name
+                      .col-md-3= val.album.name 
+                      .col-md-1= val.duration_ms 
