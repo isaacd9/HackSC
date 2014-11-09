@@ -9,7 +9,7 @@ var app = express();
 module.exports = exports = {};
 
 function configureApp (app) {
-//  app.use(bodyParser());
+  app.use(bodyParser());
   app.use("/public", express.static(__dirname + '/public'));
   app.engine('jade', require('jade').__express);
   app.set('view engine', 'jade');
