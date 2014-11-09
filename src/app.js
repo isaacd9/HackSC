@@ -25,10 +25,13 @@ function configureApp (app) {
 }
 
 function drawRoutes (app) {
-  app.get('/', controllers.hi);
+ // app.get('/', controllers.hi);
+  app.get('/', controllers.home.get);
   app.get('/ajax/search', controllers.ajax.search);
   app.get('/ajax/queue', controllers.ajax.selectSong);
   app.get('/room/:id', controllers.room.get);
+
+  app.post('/', controllers.home.post);
 }
 
 exports.create = function() {
