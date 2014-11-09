@@ -6,7 +6,7 @@ exports.get = function(req, res) {
 };
 
 exports.post = function(req, res) {
- if !(req.body.submit) {
+ if (!req.body.submit) {
     return;
   }
 
